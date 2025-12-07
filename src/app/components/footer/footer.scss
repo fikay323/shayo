@@ -1,0 +1,11 @@
+.social-icons a {
+    @apply bg-sling-green rounded-full p-2;
+
+    svg {
+        @apply w-[20px] aspect-square fill-white;
+    }
+}
+
+.footer > div {
+    @apply basis-1/2 lg:basis-1/4;
+}

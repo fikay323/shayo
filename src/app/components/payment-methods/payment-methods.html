@@ -1,0 +1,23 @@
+<section class="py-20 bg-white">
+    <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-sling-darkBlue">Easy and quick payments</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            @for(payment of paymentMethods; track payment.name) {
+                <div class="payment-type p-6 bg-white hover:shadow-xl transition rounded-xl border border-transparent flex gap-4 items-start">
+                    <div class=" min-w-[57px] min-h-0 aspect-square">
+                        @if(payment.icon) {
+                            <img [src]="payment.icon" alt="payment" class="transition-all duration-700" />
+                        }
+                    </div>
+                    <div class="">
+                        <h3 class="font-bold text-lg mb-2 text-sling-purple">{{ payment.name }}</h3>
+                        <p class="text-[#737373] text-sm">{{ payment.description }}</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

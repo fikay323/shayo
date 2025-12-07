@@ -1,0 +1,47 @@
+<section class="py-10 md:py-20 bg-[#F5F9FF]">
+    <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-xl md:text-3xl font-bold text-sling-purple mb-6 md:mb-12">Our Offerings</h2>
+
+        <div class="flex overflow-auto border-b border-slate-200 mb-12 ">
+            @for (tab of tabs; track tab.id) {
+                <button 
+                    (click)="setTab(tab.id)"
+                    class="flex-1 px-3 py-2 md:px-6 md:py-4 text-sm md:text-base font-semibold transition-colors relative whitespace-nowrap"
+                    [class.text-sling-green]="activeTab === tab.id"
+                    [class.text-sling-thickBlack]="activeTab !== tab.id"
+                >
+                    {{ tab.label }}
+                    @if (activeTab === tab.id) {
+                        <div class="absolute bottom-0 left-0 w-full h-1 bg-sling-green"></div>
+                    } 
+                </button>
+            }
+        </div>
+
+        <div class="flex flex-wrap gap-10 items-start min-h-[300px]">
+            <div class="flex-grow items-center justify-center w-[200px] md:min-w-[350px] md:h-[300px]">
+                <img [src]="tabImages[activeTab]" alt="Offering Illustration">
+            </div>
+
+            <div>
+                <p class="text-sling-textBlack text-base md:text-lg lg:text-2xl leading-relaxed">
+                    @switch (activeTab) {
+                        @case ('channels') {
+                            Elevate your customers' payment experience by offering them a variety of channels to pay through. By partnering with SLING, you unlock the potential to streamline your payment processes and start to receive money from anywhere with a customized pricing model.
+                        }
+                        @case ('analytics') {
+                            Say goodbye to uncertainty, make smart financial decisions, and gain access to real-time transaction visibility with SLING
+                        }
+                        @case ('split') {
+                            We have gone all the way to empower you with the freedom to split your settlements into different accounts. You see, we’ve got your back! 
+                        }
+                        @case ('instant') {
+                            Have you heard about our same-day settlement offering? Yes, same-day settlement! Your customers pay you today, you get settled within the hour, Viola!
+                        }
+                    }
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>

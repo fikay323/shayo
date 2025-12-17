@@ -1,0 +1,37 @@
+$animationDuration: 15s;
+
+section {
+    background: linear-gradient(103deg, #1F497D, #5eb575);
+    background-size: 400% 400%;
+    animation: changeColor $animationDuration linear 0.5s infinite;
+    
+    div > img {
+        animation: changeImg $animationDuration linear 0.5s infinite;
+    }
+}
+
+@keyframes changeColor {
+    0% {
+        background-position: 0% 86%;
+    }
+    50% {
+        background-position: 100% 15%;
+    }
+    100% {
+        background-position: 0% 86%;
+    }
+}
+
+@keyframes changeImg {
+    0% {
+        content: url("/images/hero-section-image.png");
+    }
+    50% {
+        content: url("/images/hero-section-image-2.png");
+        background-position: 100% 15%;
+    }
+    100% {
+        content: url("/images/hero-section-image.png");
+        background-position: 0% 86%;
+    }
+}

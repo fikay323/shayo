@@ -1,5 +1,15 @@
-section {
+section.background {
     background: url('/images/dashboard-preview.jpeg');
     background-position: center center;
     background-size: cover;
+}
+
+section:not(.background) {
+    @apply mt-4 md:mt-6 lg:mt-8;
+
+    .partners {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    }
 }

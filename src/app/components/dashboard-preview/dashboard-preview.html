@@ -1,4 +1,4 @@
-<section class="pt-20 bg-gradient-to-r from-sling-darkBlue to-slate-800 text-white overflow-hidden">
+<section class="background pt-20 bg-gradient-to-r from-sling-darkBlue to-slate-800 text-white overflow-hidden">
     <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-end gap-12">
         <div class="md:w-1/2 pb-16">
             <h2 class="text-2xl md:text-5xl font-normal mb-6 leading-tight">
@@ -14,5 +14,19 @@
                 <img src="/images/dashboard-screenshot.png" alt="Dashboard" class="w-full">
             </div>
         </div>
-  </div>
+    </div>
+</section>
+
+<section>
+    <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="primary-header text-center">Meet our Partners</h2>
+        
+        <div class="partners">
+            @for (partner of partners; track $index) {
+                <div class="flex justify-center items-center">
+                    <img [src]="partner" alt="">
+                </div>
+            }
+        </div>
+    </div>
 </section>

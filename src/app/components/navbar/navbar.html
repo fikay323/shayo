@@ -1,24 +1,62 @@
 <nav class="fixed top-0 left-0 w-full bg-white z-50 shadow-sm py-8">
-  <div class="max-w-[1200px] mx-auto px-6 flex justify-between items-center">
-    <div class="flex items-center gap-2">
-      <img src="/images/sling_logo-dark.png" alt="">
-    </div>
+	<div class="max-w-[1200px] mx-auto px-6 flex justify-between items-center">
+		<div class="flex items-center gap-2">
+			<img src="/images/sling_logo-dark.png" alt="">
+		</div>
 
-    <div class="hidden md:flex items-center gap-8 text-sling-purple">
-      <a href="#about" class="">About</a>
-      <a href="#developers" class="">Developers</a>
-      <a href="#service" class="">Service</a>
-      <a href="#features" class="">Features</a>
-      <a href="#support" class="">Support</a>
-    </div>
+		<div class="hidden md:flex items-center gap-8 text-sling-purple">
+			<a href="#about" class="">About</a>
+			<a href="#developers" class="">Developers</a>
+			<a href="#service" class="">Service</a>
+			<a href="#features" class="">Features</a>
+			<a href="#support" class="">Support</a>
+		</div>
 
-    <div class="flex items-center gap-4">
-      <button class="px-6 py-2 border border-sling-green text-sling-green rounded hover:bg-green-50 transition font-medium">
-        Login
-      </button>
-      <button class="px-6 py-2 bg-sling-green text-white rounded hover:bg-sling-darkGreen transition font-medium shadow-lg shadow-green-200">
-        Create Account
-      </button>
-    </div>
-  </div>
+		<div class="hidden md:flex items-center gap-4">
+			<button class="px-6 py-2 border border-sling-green text-sling-green rounded hover:bg-green-50 transition font-medium">
+				Login
+			</button>
+			<button class="px-6 py-2 bg-sling-green text-white rounded hover:bg-sling-darkGreen transition font-medium shadow-lg shadow-green-200">
+				Create Account
+			</button>
+		</div>
+
+		<button (click)="toggleMenu()" class="md:hidden p-2 rounded bg-slate-100 text-slate-800 hover:bg-slate-200 focus:outline-none transition">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+			</svg>
+		</button>
+	</div>
+
+	<div 
+		class="absolute top-full left-0 w-full bg-white shadow-xl md:hidden flex flex-col transition-all duration-300 origin-top overflow-hidden"
+		[class.max-h-0]="!isOpen"
+		[class.max-h-screen]="isOpen"
+		[class.opacity-0]="!isOpen"
+		[class.opacity-100]="isOpen"
+	>
+		<a href="" class="block px-6 py-4 bg-[#3f444b] text-white font-medium">
+			Homepage
+		</a>
+
+		<a href="#about" class="mobile-nav-item">
+			About
+		</a>
+
+		<a href="#developers" class="mobile-nav-item">
+			Developers
+		</a>
+
+		<a href="#service" class="mobile-nav-item">
+			Services
+		</a>
+
+		<a href="#features" class="mobile-nav-item">
+			Features
+		</a>
+
+		<a href="#support" class="mobile-nav-item">
+			Support
+		</a>
+	</div>
 </nav>

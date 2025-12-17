@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .primary-header {
+        @apply text-xl md:text-3xl font-bold text-sling-purple mb-6 md:mb-12;
+    }
+}
+
 html,
 body {
     scroll-behavior: smooth;
